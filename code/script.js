@@ -6,6 +6,7 @@ const list = document.getElementById("restaurants")
 
 const url = `https://developers.zomato.com/api/v2.1/search?entity_id=${CityId}&entity_type=city&cuisines=${CousineId}`;
 
+
 //Fetch that creates let = restaurants and invoke function to show all restaurants (renderRestaurants)
 const fetchRestaurants = () => {
 
@@ -19,7 +20,7 @@ const fetchRestaurants = () => {
 
 //function that deside which info to show
 const renderRestaurantInfo = (restaurant) => {
-    return `<ul>${restaurant.name} <br> 
+    return `<li class="restaurantCard">${restaurant.name} <br> 
          Opening Hours: ${restaurant.timings}<br> 
         Address: ${restaurant.location.address} <br> 
         Phone: ${restaurant.phone_numbers}<br> 
@@ -28,7 +29,7 @@ const renderRestaurantInfo = (restaurant) => {
         Price range: ${restaurant.price_range}<br> 
         ${renderPhotos(restaurant)}
         
-        </ul>`
+        </li>`
 }
 
 //function to see if pictures are avalible or not 
@@ -78,3 +79,4 @@ document.getElementById("expensive").addEventListener('click', () => {
 document.getElementById("resetPriceRange").addEventListener('click', () => {
     renderRestaurants("all")
 })
+
