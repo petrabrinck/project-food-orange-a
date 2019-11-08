@@ -1,4 +1,177 @@
-body {
-    color:black;
+  body {
+    background:#f8d3c0;
+    color: rgb(243, 240, 240);
+    /*font family in body for the whole sight*/
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /*to make the webpage go all the way up to the edges for the whole sight*/
+}
+ /********* Header**********/
+    /*this div becomes the container for the header  display flex and the items are centered*/
+    /*padding on both of the sides, the horisontal parts to make space from the boarder*/
     
-}    
+    header {
+        background: #62cdbd;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        padding: 0px 16px;
+    }
+    /*nav bar becomes hamburger model*/
+    /*this div becomes the container for the hamburger menu,  display flex*/
+    /*same height and width to make it a square*/
+    /*flex/direction column to make them separate*/
+    /*justify content to make them spread out / space between the lines*/
+    /*margin right for space between the hamburger and logo*/
+    
+    .hamburger {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 24 px;
+    }
+    /*here the actual lines for the hamburger menu, same width as the container, but thinner*/
+    
+    .hamburger div {
+        width: 30px;
+        height: 5px;
+        background: #fff;
+        border-radius: 5px;
+    }
+    
+    header img {
+        width: 180px;
+        padding: 0px 15px;
+    }
+    /*the nav is hidden on the small screen*/
+    
+    nav {
+        display: none;
+    }
+    /*links get color blue by default. we make them white and no line under the text*/
+    /*margin left to give space between the menu links and not mess with the outer edges*/
+    
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        align-items: right;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+/***** Welcome text *****/
+
+.welcome-text-container .container {
+      /* The "linear-gradient" gives a darker feeling to the her image*/
+  /* Image / copied the relative path for the pic */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./pic/Food.png");
+  background-repeat: no-repeat;
+  /* To make the her picture cover the screen */
+  background-size: cover;
+  background-position: center;
+  /* The image change size on all screens */
+  position: relative;
+  
+  padding: 100px 16px;
+    display: flex;
+    flex-direction: column;
+    color: #fbe9e4;
+}
+/*the picture should be as big as possible and grow when we chance screen size*/
+
+.welcome-text-container img {
+    width: 100%;
+    height: auto;
+}
+/* text container alligned in the center */
+
+.welcome-text-container div {
+    text-align: center;
+}
+
+/****** Restaurant Container ******/
+/*text aligned in the center with padding*/
+    
+.restaurant-container .container {
+    background: rgb(209, 205, 205);
+    color: #fff;
+    text-align: center;
+    padding: 24px, 24px;
+    width: 100%;
+}
+
+/* flex and wrap to the next level on a big screen*/
+/*border with sharp edges, no border/radius, as wide as pocible*/
+/*margin bottom to add space betwween the news boxes*/
+
+.restaurants {
+    background: #fff;
+    border: 2px solid rgb(179, 159, 219);
+    padding: 16px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restaurantCard {
+    background: #fbe9e4;
+    color: darkgray;
+    width: 90%;
+    font-size: 12px;
+}
+ 
+.restaurantCard img {
+    width: 30%;
+    height: auto;
+    padding: 0 15px;
+}
+
+
+
+/* Media Queries*/
+    /*Show the navbar and hide the hamburger in this size*/
+    /*Justify content;Spread the content with space between. x*/
+   
+    @media (min-width: 650px) {
+        header {
+            justify-content: space-between;
+        }
+        nav {
+            display: inline-block;
+        }
+        .hamburger {
+            display: none;
+        }
+        .restaurants-container .div {
+            text-align: right;
+        }
+        .restaurantCard {
+            width: 25%;
+            flex-grow: 1;
+            margin: 16px;
+        }
+
+    }
+        @media (min-width: 1024px) {
+            .restaurant-container .container {
+                flex-direction: row;
+                align-items: center;
+            }
+           /* .big-news-container img {
+                width: 50%;
+            }
+            /* the news cards will be at least 25% of the size but still grow*/
+            .restaurantCard {
+                width: 25%;
+                flex-grow: 1;
+                margin: 16px;
+            }
+            .restaurantCard img{
+                object-position: bottom;
+                width: 25%;
+                flex-grow: 1;
+                margin: 16px;
+            }
+        }

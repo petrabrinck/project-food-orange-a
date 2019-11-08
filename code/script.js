@@ -11,7 +11,7 @@ fetch(url, { headers: { "user-Key": apiKey } })
         json.restaurants.forEach(resto => {
             console.log(resto.restaurant.name);
             document.getElementById("restaurants").innerHTML += `
-        <ul>${resto.restaurant.name} <br> Opening Hours: ${
+        <li class="restaurantCard">${resto.restaurant.name} <br> Opening Hours: ${
                 resto.restaurant.timings
                 }<br> address: ${resto.restaurant.location.address} <br> ${
                 resto.restaurant.phone_numbers
@@ -21,6 +21,6 @@ fetch(url, { headers: { "user-Key": apiKey } })
                 resto.restaurant.has_online_delivery
                 }${resto.restaurant.price_range}<img src=${
                 resto.restaurant.photos[0].photo.thumb_url
-                }  </ul>`;
+                }  </li>`;
         });
     });
