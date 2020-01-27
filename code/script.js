@@ -7,7 +7,7 @@ const list = document.getElementById("restaurants")
 const url = `https://developers.zomato.com/api/v2.1/search?entity_id=${CityId}&entity_type=city&cuisines=${CousineId}`;
 
 
-//Fetch that creates let = restaurants and invoke function to show all restaurants (renderRestaurants)
+//Fetch that creates let = restaurants and invoke function to show all restaurants (renderRestaurants)/
 const fetchRestaurants = () => {
 
     fetch(url, { headers: { "user-Key": apiKey } })
